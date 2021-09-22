@@ -1,0 +1,35 @@
+.container{
+    max-width: 1820px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @extend %ProximaNova-700;
+    font-size: 18px;
+    color: #1E2E36;
+}
+.main{
+    flex-grow: 1;
+}
+a{
+    text-decoration: none;
+    color: #1E2E36;
+}
+.title{
+    font-size: 48px;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        background-image: url('../images/title.svg');
+        background-repeat: no-repeat;
+        object-fit: cover;
+        width: 20px;
+        height: 50px;
+        left: -5px;
+        z-index: -1;
+    }
+}

@@ -1,0 +1,527 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.header{
+    padding: 18px 0;
+    border-bottom: 1px solid #1E2E36;
+    &-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-inner_social{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-inner_subtitle{
+        margin-right: 14px;
+    }
+    &-inner_link{
+        display: inline-block;
+        & + .header-inner_link{
+            margin-left: 30px;
+        }
+    }
+    &-inner_call{
+        margin-left: 70px;
+        padding-left: 15px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url('../images/header-before.svg');
+            background-repeat: no-repeat;
+            object-fit: cover;
+            width: 16px;
+            height: 22px;
+            left: -10px;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            background-image: url('../images/angle.svg');
+            background-repeat: no-repeat;
+            object-fit: cover;
+            width: 14px;
+            height: 8px;
+            right: -25px;
+            top: 7px;
+        }
+    }
+    &-inner_menu{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-inner_menu-item{
+        padding: 0 2px;
+        text-transform: uppercase;
+        & + .header-inner_menu-item{
+            margin-left: 15px;
+        }
+        &.header-inner_menu-item--active{
+            border-bottom: 3px solid #44C697;
+        }
+        &:hover{
+            border-bottom: 3px solid #44C697;
+        }
+    }
+}
+
+.furniture-top{
+    padding-top: 15px;
+    &_wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_list{
+        display: flex;
+        justify-content: space-between;
+    }
+    &_list-item{
+        padding-right: 20px;
+        text-transform: uppercase;
+        & + .furniture-top_list-item{
+            margin-left: 20px;
+        }
+    }
+    &_list-link{
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            background-image: url('../images/angle.svg');
+            background-repeat: no-repeat;
+            object-fit: cover;
+            width: 14px;
+            height: 8px;
+            right: -20px;
+            top: 6px;
+        }
+    }
+    &_box{
+        margin: 0 auto 0 160px;
+    }
+    &_logo{
+        width: 360px;
+        height: 75px;
+        object-fit: cover;
+    }
+    &_inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_inner-basket{
+        margin-right: 30px;
+        text-transform: uppercase;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url('../images/cart.svg');
+            background-repeat: no-repeat;
+            object-fit: cover;
+            width: 30px;
+            height: 30px;
+            left: -36px;
+            top: -6px;
+        }
+    }
+    &_inner-call{
+        padding: 14px 46px;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #44C697;
+    }
+}
+.furniture-news{
+    margin-top: 15px;
+    background-image: url('../images/furniture_bg.jpg');
+    width: 100%;
+    height: 785px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &_box{
+        padding: 100px 70px 100px 55px;
+        text-align: center;
+        max-width: 450px;
+        background-color: #fff;
+        border-left: 15px solid #44C697;
+    }
+    &_box-title{
+        font-size: 64px;
+        margin-bottom: 50px;
+    }
+    &_box-name{
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    &_box-subtitle{
+        @extend %ProximaNova-400;
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    &_box-link{
+        padding: 14px 46px;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #44C697;
+        display: inline-block;
+        margin-bottom: 50px;
+    }
+    &_pages{
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 5px;
+    }
+    &_pages-toggle{
+        font-size: 36px;
+        display:inline-block;
+        margin-left: auto;
+    }
+    &_pages-all{
+        font-size: 24px;
+        display:inline-block;
+        margin-right: auto;
+    }
+    &_button-prev, &_button-next{
+        border: none;
+        background-color: inherit;
+    }
+}
+.categories{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &-title{
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 405px;
+        margin-bottom: 56px;
+    }
+    &-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 90px;
+    }
+    &-inner_item{
+        text-align: center;
+        width: 100px;
+    }
+    &-inner_item-img{
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 20px;
+    }
+    &-inner_item-title{
+        font-size: 24px;
+        text-transform: uppercase;
+        &.categories-inner_item-title--active{
+            border-bottom: 3px solid #44C697;
+        }
+    }
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px 30px;
+    margin-bottom: 55px;
+    &-item{
+        position: relative;
+        max-width: 585px;
+        &:hover{
+            margin-top: -15px;
+            .products-item_wrap{
+                background-color: #44C697;
+            }
+            .products-item_title{
+                color: #fff;
+            }
+        }
+    }
+    &-item_sub{
+        position: absolute;
+        color: #fff;
+        padding: 5px 15px;
+        background-color: #1E2E36;
+        text-transform: uppercase;
+        left: 0;
+        top: 10px;
+    }
+    &-item_img{
+        max-width: 585px;
+        height: 300px;
+    }
+    &-item_wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 15px 15px;
+    }
+    &-item_title{
+        text-transform: uppercase;
+        font-size: 24px;
+        &.products-item_title--akc{
+            color: #FF1B1B;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        &.products-item_title--old{
+            font-size: 18px;
+            color: #BCBDBB;
+            text-decoration-line: line-through;
+        }
+    }
+    &-item_akc{
+        position: absolute;
+        color: #fff;
+        padding: 5px 15px;
+        background-color: #FF1B1B;
+        text-transform: uppercase;
+        left: 0;
+        top: 47px;
+    }
+}
+.categories_button{
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    padding: 14px 46px;
+    text-transform: uppercase;
+    background-color: #44C697;
+}
+.about{
+    width: 100%;
+    padding-bottom: 100px;
+    .categories-title{
+        max-width: 189px;
+    }
+    &-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 100px;
+        position: relative;
+    }
+    &-inner_left{
+        padding: 50px 30px 50px 50px;
+        margin-top: 110px;
+        width: 865px;
+        height: 475px;
+        border-right: 15px solid #44C697;
+        z-index: 10;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    &-inner_left-text{
+        margin-bottom: 15px;
+        line-height: 23px;
+        @extend %ProximaNova-400;
+        &--addon::before{
+            content: '"Furniture"';
+            text-transform: uppercase;
+            color: #44C697;
+        }
+    }
+    &-inner_right{
+        position: absolute;
+        top: 15px;
+        right: 0;
+    }
+    &-inner_right-img{
+        max-width: 1407px;
+        height: 675px;
+    }
+}
+.feedback{
+    padding-bottom: 100px;
+    .categories-title{
+        max-width: 540px;
+    }
+    &-inner{
+        width: 100%;
+        height: 675px;
+        position: relative;
+
+    }
+    &-inner_img{
+        max-width: 1780px;
+        width: 100%;
+        height: 675px;
+        z-index: -1;
+    }
+    &-inner_form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 50px 50px 30px;
+        width: 515px;
+        height: 457px;
+        border-left: 15px solid #44C697;
+        background-color: #fff;
+        z-index: 10;
+        position: absolute;
+        right: 0;
+        top: 109px;  
+    }
+    &-inner_form-label{
+        font-size: 36px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+    &-inner_form-input{
+        width: 430px;
+        height: 50px;
+        padding: 14px 15px;
+        margin-bottom: 15px;
+        @extend %ProximaNova-400;
+        border: 1px solid #000;
+    }
+    &-inner_form-btn{
+        padding: 14px 0;
+        width: 430px;
+        background-color: #44C697;
+        color: #fff;
+        border: none;
+        margin-bottom: 30px;
+    }
+    &-inner_form-text{
+        @extend %ProximaNova-400;
+        line-height: 23px;
+        span{
+            @extend %ProximaNova-700;
+        }
+    }
+}
+.footer-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_left{
+        padding: 50px 100px 15px 50px;
+        background-color: #1E2E36;
+        min-height: 520px;
+        width: 100%;
+    }
+    &_logo{
+        margin-bottom: 50px;
+    }
+    &_left-wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    &_left-list{
+        display: flex;
+        flex-direction: column;
+        margin-right: 65px;
+        & + .footer-inner_left-list{
+            margin-right: 115px;
+            min-width: 218px;
+        }
+    }
+    &_left-item{
+        color: #fff;
+        padding-left: 10px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            background-image: url('../images/minus.svg');
+            width: 20px;
+            height: 15px;
+            left: -18px;
+            top: -1px;
+        }
+    }
+    &_left-link{
+        color: #fff;
+    }
+    &_left-social{
+        width: 221px;
+    }
+    &_left-place{
+        color: #fff;
+        @extend %ProximaNova-400;
+        margin-bottom: 15px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            background-image: url('../images/location.svg');
+            width: 20px;
+            height: 24px;
+            left: -24px;
+            top: -3px;
+        }
+    }
+    &_left-days{
+        display: inline-block;
+        @extend %ProximaNova-400;
+        color: #fff;
+        margin-bottom: 15px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            background-image: url('../images/calendar.svg');
+            width: 20px;
+            height: 24px;
+            left: -24px;
+            top: -3px;
+        }
+    }
+    &_left-tel{
+        display: block;
+        color: #44C697;
+        margin-bottom: 30px;
+        line-height: 27px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            background-image: url('../images/telephone-grn.svg');
+            background-repeat: no-repeat;
+            width: 17px;
+            height: 24px;
+            left: -22px;
+            top: 2px;
+        }
+    }
+    &_left-subtitle{
+        display: block;
+        @extend %ProximaNova-400;
+        margin-bottom: 17px;
+        color: #fff;
+    }
+    &_left-chain{
+        margin-right: 30px;
+    }
+    &_left-copy{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 90px;
+    }
+    &_left-copyright{
+        color: #fff;
+        @extend %ProximaNova-400;
+        font-size: 14px;
+    }
+    &_left-rekl{
+        color: #fff;
+        @extend %ProximaNova-400;
+        font-size: 14px;
+        text-transform: uppercase;  
+    }
+}
+@import 'media';
