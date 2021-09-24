@@ -6,6 +6,16 @@
 .header{
     padding: 18px 0;
     border-bottom: 1px solid #1E2E36;
+    &-inner_btn{
+        border: none;
+        padding: 15px 46px;
+        background-color: #44C697;
+        color: #fff;
+        cursor: pointer;
+        font-size: 15px;
+        margin-right: 25px;
+        display: none;
+    }
     &-inner{
         display: flex;
         justify-content: space-between;
@@ -79,6 +89,9 @@
     &_list{
         display: flex;
         justify-content: space-between;
+        &.furniture-top_list--active{
+            transform: translateY(0);
+        }
     }
     &_list-item{
         padding-right: 20px;
@@ -107,7 +120,7 @@
     &_logo{
         width: 360px;
         height: 75px;
-        object-fit: cover;
+        object-fit: contain;
     }
     &_inner{
         display: flex;
@@ -118,6 +131,7 @@
         margin-right: 30px;
         text-transform: uppercase;
         position: relative;
+        padding-left: 35px;
         &::before{
             content: '';
             position: absolute;
@@ -126,7 +140,7 @@
             object-fit: cover;
             width: 30px;
             height: 30px;
-            left: -36px;
+            left: -1px;
             top: -6px;
         }
     }
@@ -135,6 +149,16 @@
         text-transform: uppercase;
         color: #fff;
         background-color: #44C697;
+    }
+    &_btn{
+        color: #fff;
+        background-color: #44C697;
+        padding: 14px 46px;
+        text-transform: uppercase;
+        border: none;
+        margin-right: auto;
+        display: none;
+        cursor: pointer;
     }
 }
 .furniture-news{
